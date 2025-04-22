@@ -60,3 +60,28 @@ let stephen: Person = {
 
 //calling the function
 createPerson(stephen);
+//extending an interface
+//to extend an interface use the extends keyword
+interface Employee extends Person {
+  employeeId: number;
+  position: string;
+}
+
+function createEmployee(employee: Employee): void {
+  console.log(` ${employee.firstName} ${employee.lastName} is ${employee.age} years old. ${employee.greet()} and I work as a ${employee.position} ${employee.employeeId} ${employee.gender}`);
+}
+
+let Stephen: Employee = {
+  firstName: "Stephen",
+  lastName: "Oloo",
+  age: 23,
+  employeeId: 10001,
+  gender: "M",
+  position: "Software Engineer",
+  greet: function() {
+    return `Hello, my name is ${this.firstName} ${this.lastName}`;
+  },
+}
+
+//calling the function
+createEmployee(Stephen);
