@@ -1,0 +1,62 @@
+//basic daatetypes
+let isOkay:boolean = false;
+let firstName:string = "Raphael";
+let age:number = 30;
+let hobbies:string[] = ["soccer", "gaming", "music"];
+let details:[boolean, string, number] = [false,"Raphael", 30];
+let any:any = "soccer";
+
+//creating and calling a function
+function greet(name: string): string {
+  return `Hello, ${name}!`;
+}
+
+const userName: string = "TypeScript User";
+console.log(greet(userName));
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+console.log(add(5, 10));
+
+//working with intefaces
+//( help us to define the structure of an object or the shape of an object)
+
+interface DreamCar {
+  name: string;
+  year: number;
+  horsepower: number;
+  isElectric: boolean;
+}
+
+function getCarDetails(car: DreamCar){
+  console.log(`Car Name: ${car.name} Car Year: ${car.year} Horsepower: ${car.horsepower} Is Electric: ${car.isElectric}`);
+}
+
+getCarDetails({name:"Mecercedes Benz", year:2024, horsepower: 360, isElectric: false});
+
+//creating an interface with optional properties(interface Oloo)
+interface Person {
+  firstName: string;
+  lastName: string;
+  age: number;
+  greet():string;
+  gender?: string; //optional property
+}
+
+function createPerson(person: Person): void {
+  console.log(` ${person.firstName} ${person.lastName} is ${person.age} years old.${person.greet()} ${person.gender}`);
+}
+
+let stephen: Person = {
+  firstName: "Stephen",
+  lastName: "Oloo",
+  age: 23,
+  greet: function() {
+    return `Hello, my name is ${this.firstName} ${this.lastName}`;
+  },
+}
+
+//calling the function
+createPerson(stephen);
