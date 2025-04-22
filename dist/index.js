@@ -36,16 +36,7 @@ createPerson(stephen);
 function createEmployee(employee) {
     console.log(` ${employee.firstName} ${employee.lastName} is ${employee.age} years old. ${employee.greet()} and I work as a ${employee.position} ${employee.employeeId} ${employee.gender}`);
 }
-let Stephen = {
-    firstName: "Stephen",
-    lastName: "Oloo",
-    age: 23,
-    employeeId: 10001,
-    gender: "M",
-    position: "Software Engineer",
-    greet: function () {
-        return `Hello, my name is ${this.firstName} ${this.lastName}`;
-    },
-};
+//(... this is a spread operator)
+let Stephen = Object.assign(Object.assign({}, stephen), { employeeId: 10001, gender: "M", position: "Software Engineer" });
 //calling the function
 createEmployee(Stephen);

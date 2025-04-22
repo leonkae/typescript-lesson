@@ -70,17 +70,12 @@ interface Employee extends Person {
 function createEmployee(employee: Employee): void {
   console.log(` ${employee.firstName} ${employee.lastName} is ${employee.age} years old. ${employee.greet()} and I work as a ${employee.position} ${employee.employeeId} ${employee.gender}`);
 }
-
+//(... this is a spread operator)spread operator is used to copy properties from one object to another
 let Stephen: Employee = {
-  firstName: "Stephen",
-  lastName: "Oloo",
-  age: 23,
+  ...stephen,
   employeeId: 10001,
   gender: "M",
   position: "Software Engineer",
-  greet: function() {
-    return `Hello, my name is ${this.firstName} ${this.lastName}`;
-  },
 }
 
 //calling the function
