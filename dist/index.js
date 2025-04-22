@@ -36,7 +36,11 @@ createPerson(stephen);
 function createEmployee(employee) {
     console.log(` ${employee.firstName} ${employee.lastName} is ${employee.age} years old. ${employee.greet()} and I work as a ${employee.position} ${employee.employeeId} ${employee.gender}`);
 }
-//(... this is a spread operator)
+//(... this is a spread operator)spread operator is used to copy properties from one object to another
 let Stephen = Object.assign(Object.assign({}, stephen), { employeeId: 10001, gender: "M", position: "Software Engineer" });
 //calling the function
 createEmployee(Stephen);
+let upperCaseText = (text) => {
+    return text.toUpperCase();
+};
+console.log(upperCaseText("hello world"));

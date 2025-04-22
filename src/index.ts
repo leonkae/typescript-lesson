@@ -80,3 +80,15 @@ let Stephen: Employee = {
 
 //calling the function
 createEmployee(Stephen);
+
+// interfaces can also be used to define the structure of a function
+
+interface formatText {
+  (text:string): string;
+}
+
+let upperCaseText: formatText = (text: string): string => {
+  return text.toUpperCase();
+}
+
+console.log(upperCaseText("hello world"));
