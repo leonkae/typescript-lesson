@@ -44,7 +44,7 @@ let upperCaseText = (text) => {
     return text.toUpperCase();
 };
 console.log(upperCaseText("hello world"));
-//creating a class
+//creating a class & constructor & inheritance
 class Animal {
     constructor(name) {
         this.animalName = name;
@@ -60,3 +60,28 @@ class Dog extends Animal {
 }
 let dog = new Dog("Rover");
 dog.bark();
+//Acess modifiers
+//public, private, protected
+class Person1 {
+    constructor(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+    getDetails() {
+        console.log(`Name: ${this.firstName} ${this.lastName}, Age: ${this.age}`);
+    }
+}
+class Employee1 extends Person1 {
+    constructor(firstName, lastName, age, employeeId) {
+        super(firstName, lastName, age);
+        this.employeeId = employeeId;
+    }
+    getDetails() {
+        super.getDetails();
+        console.log(`Employee ID: ${this.employeeId}`);
+    }
+}
+let person1 = new Person1("Stephen", "Oloo", 23);
+person1.getDetails();
+console.log(person1.firstName); // accessible

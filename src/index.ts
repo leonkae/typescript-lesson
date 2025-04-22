@@ -93,7 +93,7 @@ let upperCaseText: formatText = (text: string): string => {
 
 console.log(upperCaseText("hello world"));
 
-//creating a class
+//creating a class & constructor & inheritance
 class Animal{
 
   animalName: string;
@@ -114,3 +114,42 @@ class Dog extends Animal {
 
 let dog = new Dog("Rover");
 dog.bark();  
+
+//Acess modifiers
+//public, private, protected
+
+class Person1 {
+  public firstName: string;
+  private lastName: string;
+  protected age: number;
+
+  constructor(firstName: string, lastName: string, age: number) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+
+  getDetails(): void{
+    console.log(`Name: ${this.firstName} ${this.lastName}, Age: ${this.age}`);
+  }
+}
+
+class Employee1 extends Person1 {
+  private employeeId: number;
+
+  constructor(firstName: string, lastName: string, age: number, employeeId: number) {
+    super(firstName, lastName, age);
+    this.employeeId = employeeId;
+  }
+  getDetails(): void {
+    super.getDetails();
+    console.log(`Employee ID: ${this.employeeId}`);
+  }
+}
+
+let person1 = new Person1("Stephen", "Oloo", 23);
+person1.getDetails();
+console.log(person1.firstName); // accessible
+//console.log(person1.lastName); // not accessible
+//console.log(person1.age); // not accessible
