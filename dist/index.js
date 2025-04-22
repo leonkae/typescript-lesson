@@ -44,3 +44,19 @@ let upperCaseText = (text) => {
     return text.toUpperCase();
 };
 console.log(upperCaseText("hello world"));
+//creating a class
+class Animal {
+    constructor(name) {
+        this.animalName = name;
+    }
+    makeSound() {
+        console.log(`${this.animalName} makes a sound`);
+    }
+}
+class Dog extends Animal {
+    bark() {
+        console.log(`${this.animalName} barks`);
+    }
+}
+let dog = new Dog("Rover");
+dog.bark();

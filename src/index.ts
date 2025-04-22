@@ -92,3 +92,25 @@ let upperCaseText: formatText = (text: string): string => {
 }
 
 console.log(upperCaseText("hello world"));
+
+//creating a class
+class Animal{
+
+  animalName: string;
+
+  constructor(name: string){
+    this.animalName = name;
+  }
+  makeSound(): void {
+    console.log(`${this.animalName} makes a sound`);
+  }
+}
+
+class Dog extends Animal {
+  bark(): void {
+    console.log(`${this.animalName} barks`);
+  }
+}
+
+let dog = new Dog("Rover");
+dog.bark();  
